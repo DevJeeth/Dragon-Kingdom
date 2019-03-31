@@ -37,9 +37,13 @@ namespace MalbersAnimations
         public float m_TiltMax = 75f;                               // The maximum value of the x axis rotation of the pivot.
         public float m_TiltMin = 45f;                               // The minimum value of the x axis rotation of the pivot.
 
-        //[Header("Camera Axis")]
-        public InputAxis Vertical = new InputAxis("LookVertical", true, false);
-        public InputAxis Horizontal = new InputAxis("LookHorizontal", true, false);
+		//[Header("Camera Axis")]
+		//public InputAxis Vertical = new InputAxis("LookVertical", true, false);
+		//public InputAxis Horizontal = new InputAxis("LookHorizontal", true, false);
+
+		[Header("ETC Touch Pad")]
+		public float m_fLookVertical;
+		public float m_fLookHorizontal;
 
         [Space]
         public bool m_LockCursor = false;                           // Whether the cursor should be hidden and locked.
@@ -93,7 +97,7 @@ namespace MalbersAnimations
 
             inputSystem = DefaultInput.GetInputSystem(PlayerID);
 
-            Horizontal.InputSystem = Vertical.InputSystem = inputSystem;        //Update the Input System on the Axis
+            //Horizontal.InputSystem = Vertical.InputSystem = inputSystem;        //Update the Input System on the Axis
         }
 
         public virtual void SetState(FreeLookCameraState profile)
@@ -114,8 +118,8 @@ namespace MalbersAnimations
         {
             if (Time.timeScale < float.Epsilon) return;
 
-            x = Horizontal.GetAxis;
-            y = Vertical.GetAxis;
+            x = m_fLookHorizontal/10;
+            y = m_fLookVertical/10;
 
             m_LookAngle += x * m_TurnSpeed;                                                     // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
             m_TransformTargetRot = Quaternion.Euler(0f, m_LookAngle, 0f);                       // Rotate the rig (the root object) around Y axis only:

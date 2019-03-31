@@ -36,7 +36,19 @@ public class PlayerControllerManager : MonoBehaviour
 		m_fLookHorizontal = ETCInput.GetAxis("LookHorizontal");
 		m_fLookVertical = ETCInput.GetAxis("LookVertical");
 
-		m_refDragonInput.MovementAxis = new Vector2(m_fHorizontal,m_fVertical);
+		//m_refDragonInput.MovementAxis = new Vector2(m_fHorizontal,m_fVertical);
 		m_refDragonInput.MovementForward = m_fVertical;
+		m_refDragonInput.MovementRight = m_fHorizontal;
+
+		m_refFreeLookCamera.m_fLookHorizontal = m_fLookHorizontal;
+		m_refFreeLookCamera.m_fLookVertical = m_fLookVertical;
     }
+
+
+	private bool m_isFlyState = false;
+	public void DragonFlyState()
+	{
+		m_isFlyState = !m_isFlyState;
+		m_refDragonInput.Fly = m_isFlyState;
+	}
 }
