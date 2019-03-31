@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using HedgehogTeam.EasyTouch;
 using MalbersAnimations;
+using MalbersAnimations.Utilities;
 
 public class PlayerControllerManager : MonoBehaviour
 {
 	private Animal m_refDragonInput;
 	private MFreeLookCamera m_refFreeLookCamera;
+	private EffectManager m_refEffectManager;
 
 	private float m_fHorizontal, m_fVertical, m_fLookHorizontal, m_fLookVertical;
 
@@ -50,5 +52,16 @@ public class PlayerControllerManager : MonoBehaviour
 	{
 		m_isFlyState = !m_isFlyState;
 		m_refDragonInput.Fly = m_isFlyState;
+	}
+
+	public void DragonMeleeAttack(int a_attackValue)
+	{
+		m_refDragonInput.SetAttack(a_attackValue);
+	}
+
+	public void DragonRangeAttack(int a_effectValue)
+	{
+		m_refDragonInput.SetSecondaryAttack();
+		//m_refEffectManager._EnableEffect(111);
 	}
 }
