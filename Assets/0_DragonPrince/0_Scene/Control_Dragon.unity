@@ -1429,6 +1429,31 @@ PrefabInstance:
       propertyPath: Horizontal.input
       value: LookHorizontal
       objectReference: {fileID: 0}
+    - target: {fileID: 114351821417399828, guid: 736f57217b513be468cd323120caf8c0,
+        type: 3}
+      propertyPath: updateType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114351821417399828, guid: 736f57217b513be468cd323120caf8c0,
+        type: 3}
+      propertyPath: m_MoveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114351821417399828, guid: 736f57217b513be468cd323120caf8c0,
+        type: 3}
+      propertyPath: m_TiltMax
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 114351821417399828, guid: 736f57217b513be468cd323120caf8c0,
+        type: 3}
+      propertyPath: m_TiltMin
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114351821417399828, guid: 736f57217b513be468cd323120caf8c0,
+        type: 3}
+      propertyPath: m_TurnSmoothing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736f57217b513be468cd323120caf8c0, type: 3}
 --- !u!1 &1727860601
@@ -2129,7 +2154,7 @@ PrefabInstance:
     - target: {fileID: 6906198161844023971, guid: 283c491bc5ce8b14c8e35f70db2c9f3b,
         type: 3}
       propertyPath: UseCamera
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6906198161844023971, guid: 283c491bc5ce8b14c8e35f70db2c9f3b,
         type: 3}

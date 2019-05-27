@@ -118,27 +118,37 @@ namespace MalbersAnimations
         {
             if (Time.timeScale < float.Epsilon) return;
 
-            x = m_fLookHorizontal/10;
-            y = m_fLookVertical/10;
+            x = m_fLookHorizontal;
+            y = m_fLookVertical;
 
-            m_LookAngle += x * m_TurnSpeed;                                                     // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
-            m_TransformTargetRot = Quaternion.Euler(0f, m_LookAngle, 0f);                       // Rotate the rig (the root object) around Y axis only:
+			Debug.Log("X: " + x + "Y: " + y);
+			if (!BoltStudios.Utilities.s_IsCameraTouchActive)
+			{
+				Debug.Log("Reset Rotation");
+				Pivot.localRotation = Quaternion.Slerp(Pivot.localRotation, Quaternion.Euler(0, 0, 0), m_TurnSmoothing * Time.deltaTime);
+				transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, m_Target.transform.rotation.y, 0), m_TurnSmoothing * Time.deltaTime);
+			}
+			else
+			{
+				m_LookAngle += x * m_TurnSpeed;                                                     // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
+				m_TransformTargetRot = Quaternion.Euler(0f, m_LookAngle, 0f);                       // Rotate the rig (the root object) around Y axis only:
 
-            m_TiltAngle -= y * m_TurnSpeed;                                                 // on platforms with a mouse, we adjust the current angle based on Y mouse input and turn speed
-            m_TiltAngle = Mathf.Clamp(m_TiltAngle, -m_TiltMin, m_TiltMax);                  // and make sure the new value is within the tilt range
+				m_TiltAngle -= y * m_TurnSpeed;                                                 // on platforms with a mouse, we adjust the current angle based on Y mouse input and turn speed
+				m_TiltAngle = Mathf.Clamp(m_TiltAngle, -m_TiltMin, m_TiltMax);                  // and make sure the new value is within the tilt range
 
-            m_PivotTargetRot = Quaternion.Euler(m_TiltAngle, m_PivotEulers.y, m_PivotEulers.z); // Tilt input around X is applied to the pivot (the child of this object)
+				m_PivotTargetRot = Quaternion.Euler(m_TiltAngle, m_PivotEulers.y, m_PivotEulers.z); // Tilt input around X is applied to the pivot (the child of this object)
 
-            if (m_TurnSmoothing > 0)
-            {
-                Pivot.localRotation = Quaternion.Slerp(Pivot.localRotation, m_PivotTargetRot, m_TurnSmoothing * Time.deltaTime);
-                transform.localRotation = Quaternion.Slerp(transform.localRotation, m_TransformTargetRot, m_TurnSmoothing * Time.deltaTime);
-            }
-            else
-            {
-                Pivot.localRotation = m_PivotTargetRot;
-                transform.localRotation = m_TransformTargetRot;
-            }
+				if (m_TurnSmoothing > 0)
+				{
+					Pivot.localRotation = Quaternion.Slerp(Pivot.localRotation, m_PivotTargetRot, m_TurnSmoothing * Time.deltaTime);
+					transform.localRotation = Quaternion.Slerp(transform.localRotation, m_TransformTargetRot, m_TurnSmoothing * Time.deltaTime);
+				}
+				else
+				{
+					Pivot.localRotation = m_PivotTargetRot;
+					transform.localRotation = m_TransformTargetRot;
+				}
+			}
         }
         void Update()
         {
