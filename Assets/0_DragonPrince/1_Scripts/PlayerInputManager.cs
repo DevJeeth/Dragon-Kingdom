@@ -40,6 +40,7 @@ public class PlayerInputManager : MonoBehaviour
 
 	public void CameraTouchArea(bool a_isTouched)
 	{
-		BoltStudios.Utilities.s_IsCameraTouchActive = a_isTouched;
+		Debug.Log("<color=red>Camera Input: </color>"+a_isTouched);
+		BoltStudios.Utils.Utilities.s_IsCameraTouchActive = a_isTouched;
 	}
 }

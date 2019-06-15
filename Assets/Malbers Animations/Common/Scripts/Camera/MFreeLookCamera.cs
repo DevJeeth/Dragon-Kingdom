@@ -37,9 +37,9 @@ namespace MalbersAnimations
         public float m_TiltMax = 75f;                               // The maximum value of the x axis rotation of the pivot.
         public float m_TiltMin = 45f;                               // The minimum value of the x axis rotation of the pivot.
 
-		//[Header("Camera Axis")]
-		//public InputAxis Vertical = new InputAxis("LookVertical", true, false);
-		//public InputAxis Horizontal = new InputAxis("LookHorizontal", true, false);
+		[Header("Camera Axis")]
+		public InputAxis Vertical = new InputAxis("LookVertical", true, false);
+		public InputAxis Horizontal = new InputAxis("LookHorizontal", true, false);
 
 		[Header("ETC Touch Pad")]
 		public float m_fLookVertical;
@@ -97,8 +97,8 @@ namespace MalbersAnimations
 
             inputSystem = DefaultInput.GetInputSystem(PlayerID);
 
-            //Horizontal.InputSystem = Vertical.InputSystem = inputSystem;        //Update the Input System on the Axis
-        }
+			Horizontal.InputSystem = Vertical.InputSystem = inputSystem;        //Update the Input System on the Axis
+		}
 
         public virtual void SetState(FreeLookCameraState profile)
         {
@@ -122,13 +122,13 @@ namespace MalbersAnimations
             y = m_fLookVertical;
 
 			Debug.Log("X: " + x + "Y: " + y);
-			if (!BoltStudios.Utilities.s_IsCameraTouchActive)
-			{
-				Debug.Log("Reset Rotation");
-				Pivot.localRotation = Quaternion.Slerp(Pivot.localRotation, Quaternion.Euler(0, 0, 0), m_TurnSmoothing * Time.deltaTime);
-				transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, m_Target.transform.rotation.y, 0), m_TurnSmoothing * Time.deltaTime);
-			}
-			else
+			//if (!BoltStudios.Utils.Utilities.s_IsCameraTouchActive)
+			//{
+			//	Debug.Log("<color=green>Reset Rotation</color>");
+			//	Pivot.localRotation = Quaternion.Slerp(Pivot.localRotation, Quaternion.Euler(0, 0, 0), m_TurnSmoothing * Time.deltaTime);
+			//	transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, m_Target.transform.rotation.y, 0), m_TurnSmoothing * Time.deltaTime);
+			//}
+			//else
 			{
 				m_LookAngle += x * m_TurnSpeed;                                                     // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
 				m_TransformTargetRot = Quaternion.Euler(0f, m_LookAngle, 0f);                       // Rotate the rig (the root object) around Y axis only:
