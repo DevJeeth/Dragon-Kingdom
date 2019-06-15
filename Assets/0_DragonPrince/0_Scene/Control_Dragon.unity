@@ -888,12 +888,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a52f9211d453cf41a53faf8cb75f01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TiltMax: 45
+  m_TiltMax: 35
   m_TiltMin: 25
   m_gTarget: {fileID: 2087892266}
   m_fFollowTurnSpeed: 4
   m_fMoveSpeed: 10
-  m_fTurnSpeed: 2
+  m_fTurnSpeed: 5
   m_fSmoothRotation: 1.5
   eCameraType: 1
 --- !u!4 &1223366479
@@ -1276,7 +1276,7 @@ MonoBehaviour:
   isUnregisterAtDisable: 0
   _anchor: 3
   _anchorOffet: {x: 0, y: 0}
-  _visible: 1
+  _visible: 0
   _activated: 1
   enableCamera: 0
   cameraMode: 0
@@ -2293,7 +2293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c513711e195288b44ac497df25a51bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  show: 1
+  show: 0
 --- !u!1 &2087892266 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6793029133747828843, guid: 283c491bc5ce8b14c8e35f70db2c9f3b,

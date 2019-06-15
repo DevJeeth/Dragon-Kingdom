@@ -82,48 +82,60 @@ namespace BoltStudios.Camera
 			{
 				FollowTarget(Time.deltaTime);
 			}
-
-			if (!BoltStudios.Utils.Utilities.s_IsCameraTouchActive)
-			{
-				transform.rotation = Quaternion.Slerp(transform.rotation, m_gTarget.transform.rotation, Time.deltaTime * m_fFollowTurnSpeed);
-				m_tCameraPivot.localRotation = Quaternion.Slerp(m_tCameraPivot.localRotation, Quaternion.Euler(0,0,0), Time.deltaTime * m_fSmoothRotation);
-			}
-			else
-			{
-				//Y axis transform rotation
-				m_fLookAngle += Mathf.Clamp(m_fLookHorizontal, -1, 1) * m_fTurnSpeed;                                                           
-				transform.rotation = Quaternion.Slerp(transform.rotation, 
-					Quaternion.Euler(transform.rotation.x, (transform.eulerAngles.y + m_fLookAngle), transform.rotation.z), 
-					Time.deltaTime * m_fSmoothRotation);
-				
-				//X axis pivot rotation
-				m_TiltAngle -= Mathf.Clamp(LookVertical, -1, 1) * m_fTurnSpeed;                                                 // on platforms with a mouse, we adjust the current angle based on Y mouse input and turn speed
-				m_TiltAngle = Mathf.Clamp(m_TiltAngle, -m_TiltMin, m_TiltMax);													// and make sure the new value is within the tilt range
-
-				m_PivotTargetRot = Quaternion.Euler(m_tCameraPivot.localRotation.x + m_TiltAngle, 0, 0);
-				m_tCameraPivot.localRotation = Quaternion.Slerp(m_tCameraPivot.localRotation, m_PivotTargetRot, Time.deltaTime * m_fSmoothRotation / 2);
-				
-			}
-
 		}
 
 		private void LateUpdate()
 		{
-			if(eCameraType == eCameraUpdateType.LateUpdate)
+
+			if (m_bError)
+			{
+				return;
+			}
+
+			if (eCameraType == eCameraUpdateType.LateUpdate)
 			{
 				FollowTarget(Time.deltaTime);
+			}
+
+			//if the free cam is activated by touching lower right side of screen dont do this, move to else block
+			if (!BoltStudios.Utils.Utilities.s_IsCameraTouchActive)
+			{
+				transform.rotation = Quaternion.Slerp(transform.rotation, m_gTarget.transform.rotation, Time.deltaTime * m_fFollowTurnSpeed);
+				m_tCameraPivot.localRotation = Quaternion.Slerp(m_tCameraPivot.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * m_fSmoothRotation/2);
+			}
+			else
+			{
+				//Y axis transform rotation
+				m_fLookAngle += Mathf.Clamp(m_fLookHorizontal, -1, 1) * m_fTurnSpeed;
+				transform.rotation = Quaternion.Slerp(transform.rotation,
+					Quaternion.Euler(transform.rotation.x, (transform.eulerAngles.y + m_fLookAngle), transform.rotation.z),
+					Time.deltaTime * m_fSmoothRotation);
+
+				//X axis pivot rotation
+				m_TiltAngle -= Mathf.Clamp(LookVertical, -1, 1) * m_fTurnSpeed;                                                 // on platforms with a mouse, we adjust the current angle based on Y mouse input and turn speed
+				m_TiltAngle = Mathf.Clamp(m_TiltAngle, -m_TiltMin, m_TiltMax);                                                  // and make sure the new value is within the tilt range
+
+				m_PivotTargetRot = Quaternion.Euler(m_tCameraPivot.localRotation.x + m_TiltAngle, 0, 0);
+				m_tCameraPivot.localRotation = Quaternion.Slerp(m_tCameraPivot.localRotation, m_PivotTargetRot, Time.deltaTime * m_fSmoothRotation / 2);
+
 			}
 		}
 
 		private void FixedUpdate()
 		{
+
+			if (m_bError)
+			{
+				return;
+			}
+
 			if (eCameraType == eCameraUpdateType.FixedUpdate)
 			{
 				FollowTarget(Time.fixedDeltaTime);
 			}
 		}
 
-
+		//When the joystick is moved reset the camera to moving camera
 		public void SetCameraToFolowOnMoving()
 		{
 			if (coroutine != null)
@@ -136,6 +148,8 @@ namespace BoltStudios.Camera
 			Debug.Log("<color=purple> Reset camera to moving</color>");
 		}
 
+
+		//this is used to switch between free camera and defeault follow camera
 		Coroutine coroutine;
 		public void CameraControlActive(bool a_isActive)
 		{
