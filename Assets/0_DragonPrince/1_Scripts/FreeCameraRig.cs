@@ -10,8 +10,7 @@ namespace BoltStudios.Camera
 
 		//Child Pivot to which camera is a child of
 		private Transform m_tCameraPivot;
-		//Rotate parent y axis for 360 rotation around target
-		private Transform m_tRotateParent;
+
 
 		private float m_fLookVertical;
 		public float LookVertical { get => m_fLookVertical; set => m_fLookVertical = value; }
@@ -33,10 +32,13 @@ namespace BoltStudios.Camera
 		[Header("Target to follow")]
 		public GameObject m_gTarget;
 
+		[Header("Follow Camera turn speed")]
+		public float m_fFollowTurnSpeed = 4;
+
 		[Header("Camera possition follow speed")]
 		public float m_fMoveSpeed = 2;
 
-		[Header("Camera rotation speed")]
+		[Header("free Camera turn speed")]
 		public float m_fTurnSpeed = 2;
 
 		[Header("Smooth Slerp Value")]
@@ -50,7 +52,7 @@ namespace BoltStudios.Camera
 		void Start()
 		{
 			m_tCameraPivot = transform.GetChild(0);
-			m_tRefRig = m_tRotateParent = transform;
+			m_tRefRig = transform;
 
 			if (m_tCameraPivot == null)
 			{
@@ -83,19 +85,19 @@ namespace BoltStudios.Camera
 
 			if (!BoltStudios.Utils.Utilities.s_IsCameraTouchActive)
 			{
-				m_tRotateParent.rotation = Quaternion.Slerp(m_tRotateParent.rotation, m_gTarget.transform.rotation, Time.deltaTime * m_fSmoothRotation);
-				m_tCameraPivot.localRotation = Quaternion.Slerp(m_tCameraPivot.localRotation, Quaternion.Euler(0,0,0), Time.deltaTime * m_fSmoothRotation / 2);
+				transform.rotation = Quaternion.Slerp(transform.rotation, m_gTarget.transform.rotation, Time.deltaTime * m_fFollowTurnSpeed);
+				m_tCameraPivot.localRotation = Quaternion.Slerp(m_tCameraPivot.localRotation, Quaternion.Euler(0,0,0), Time.deltaTime * m_fSmoothRotation);
 			}
 			else
 			{
 				{
 					m_fLookAngle += Mathf.Clamp(m_fLookHorizontal, -1, 1) * m_fTurnSpeed;                                                                       // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
 					Debug.Log("<color=green> Look Angle value: " + m_fLookAngle + "</color>");
-					m_TransformTargetRot = Quaternion.Euler(0f, m_tRotateParent.rotation.y + m_fLookAngle, 0f);
-					Debug.Log("<color=red> m_tRefRig value: " + m_tRotateParent.transform.rotation + "m_tRotateParent.localRotation.y : "+ m_tRotateParent.rotation.y + "</color>");// Rotate the rig (the root object) around Y axis only:
-
+					m_TransformTargetRot = Quaternion.Euler(0f, transform.rotation.y + m_fLookAngle, 0f);
+					Debug.Log("<color=red> transform value: " + transform.eulerAngles + "transform.localRotation.y : "+ transform.localRotation.y + "</color>");// Rotate the rig (the root object) around Y axis only:
+					Debug.Log("<color=blue> m_gTarget.transform.Euler.y: "+ m_gTarget.transform.eulerAngles.y+" +"+ " m_fLookAngle: "+m_fLookAngle+" Addding Result: "+ (m_gTarget.transform.rotation.y + m_fLookAngle+"</color>"));
 					transform.rotation = Quaternion.Slerp(transform.rotation, 
-						Quaternion.Euler(transform.rotation.x, (m_gTarget.transform.rotation.y + m_fLookAngle), transform.rotation.z), 
+						Quaternion.Euler(transform.rotation.x, (transform.eulerAngles.y + m_fLookAngle), transform.rotation.z), 
 						Time.deltaTime * m_fSmoothRotation);
 				}
 

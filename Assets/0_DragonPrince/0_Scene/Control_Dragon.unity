@@ -781,6 +781,7 @@ MonoBehaviour:
   m_TiltMax: 45
   m_TiltMin: 25
   m_gTarget: {fileID: 2087892266}
+  m_fFollowTurnSpeed: 4
   m_fMoveSpeed: 10
   m_fTurnSpeed: 2
   m_fSmoothRotation: 1.5
@@ -1591,7 +1592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1727860602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1800,7 +1801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1838506327
 RectTransform:
   m_ObjectHideFlags: 0
