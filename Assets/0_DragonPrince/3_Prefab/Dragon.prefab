@@ -3176,7 +3176,7 @@ GameObject:
   - component: {fileID: 6905196862460684791}
   - component: {fileID: 6906004270239868677}
   - component: {fileID: 6873125583134213781}
-  - component: {fileID: 6791879201985081623}
+  - component: {fileID: 2087892267}
   m_Layer: 20
   m_Name: Dragon
   m_TagString: Player
@@ -3262,7 +3262,7 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 1
-  StartSpeed: 1
+  StartSpeed: 2
   height: 1.43
   walkSpeed:
     name: 
@@ -3443,8 +3443,8 @@ MonoBehaviour:
   NextAnimState: 0
   EditorGeneral: 1
   EditorGround: 1
-  EditorWater: 1
-  EditorAir: 1
+  EditorWater: 0
+  EditorAir: 0
   EditorAdvanced: 1
   EditorAirControl: 1
   EditorAttributes: 1
@@ -3591,12 +3591,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334fda2dd5b998e4abb8119d1343346f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   AnimationActive: 1
   Ignore:
     serializedVersion: 2
     m_Bits: 4
-  UseCamera: 1
+  UseCamera: 0
   CameraCenter: {x: 0.5, y: 0.5}
   Target: {fileID: 0}
   LimitAngle: 75
@@ -3631,7 +3631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181eb898d7c8aa441b8df05cec988f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 1
+  Active: 0
   GroundLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -4045,7 +4045,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &6791879201985081623
+--- !u!114 &2087892267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4054,7 +4054,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6793029133747828843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d646cdf66a7cb0f44b30074c4b00d07f, type: 3}
+  m_Script: {fileID: 11500000, guid: 461ef0b4a38d6b8418bc53f91cecaaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6793032005767258285
@@ -5757,6 +5757,7 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
   UVModule:
+    serializedVersion: 2
     enabled: 1
     mode: 0
     timeMode: 0
@@ -5874,7 +5875,7 @@ ParticleSystem:
     rowIndex: 0
     cycles: 1
     uvChannelMask: -1
-    randomRow: 1
+    rowMode: 1
     sprites:
     - sprite: {fileID: 0}
     flipU: 0
@@ -6658,8 +6659,61 @@ ParticleSystem:
     inWorldSpace: 0
     randomizePerFrame: 0
   ExternalForcesModule:
+    serializedVersion: 2
     enabled: 0
-    multiplier: 1
+    multiplierCurve:
+      serializedVersion: 2
+      minMaxState: 0
+      scalar: 1
+      minScalar: 1
+      maxCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      minCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
     influenceFilter: 0
     influenceMask:
       serializedVersion: 2
@@ -8973,7 +9027,7 @@ ParticleSystem:
 --- !u!199 &6666671527907372385
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -11522,6 +11576,7 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
   UVModule:
+    serializedVersion: 2
     enabled: 1
     mode: 0
     timeMode: 0
@@ -11639,7 +11694,7 @@ ParticleSystem:
     rowIndex: 0
     cycles: 1
     uvChannelMask: -1
-    randomRow: 1
+    rowMode: 1
     sprites:
     - sprite: {fileID: 0}
     flipU: 0
@@ -12423,8 +12478,61 @@ ParticleSystem:
     inWorldSpace: 0
     randomizePerFrame: 0
   ExternalForcesModule:
+    serializedVersion: 2
     enabled: 0
-    multiplier: 1
+    multiplierCurve:
+      serializedVersion: 2
+      minMaxState: 0
+      scalar: 1
+      minScalar: 1
+      maxCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      minCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
     influenceFilter: 0
     influenceMask:
       serializedVersion: 2
@@ -14738,7 +14846,7 @@ ParticleSystem:
 --- !u!199 &6666018032761603777
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

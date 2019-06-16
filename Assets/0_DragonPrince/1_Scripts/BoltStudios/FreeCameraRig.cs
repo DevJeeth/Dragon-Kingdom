@@ -57,7 +57,7 @@ namespace BoltStudios.Camera
 			if (m_tCameraPivot == null)
 			{
 				m_bError = true;
-				Debug.LogError("[FreeCameraRig] Pivot not found");
+				Debug.LogError("[FreeCameraRig] Pivot not found. Functionality Halted. FIX ISSUE");
 			}
 
 		}
