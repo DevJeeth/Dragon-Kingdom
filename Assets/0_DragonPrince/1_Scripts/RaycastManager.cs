@@ -37,7 +37,7 @@ public class RaycastManager : MonoBehaviour
 #if UNITY_EDITOR
 		EditorMouseInput();
 #else
-		MobileTouchInput()
+		MobileTouchInput();
 #endif
 
 	}
@@ -80,6 +80,7 @@ public class RaycastManager : MonoBehaviour
 					if (hit.transform.CompareTag("Enemy"))
 					{
 						Debug.Log("<color=red>[RaycastManager] The enemy has been selected, Fire ball attack</color>");
+						LookAtSelectedTarget(hit.transform);
 					}
 				}
 

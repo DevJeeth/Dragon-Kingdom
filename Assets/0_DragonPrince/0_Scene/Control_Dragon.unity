@@ -1155,7 +1155,7 @@ MonoBehaviour:
   onDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2087892267}
         m_MethodName: DragonFlyState
         m_Mode: 1
         m_Arguments:
@@ -2574,6 +2574,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6791879202458202252}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2087892267 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2087892267, guid: 283c491bc5ce8b14c8e35f70db2c9f3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6791879202458202252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087892266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461ef0b4a38d6b8418bc53f91cecaaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6791879202458202252
 PrefabInstance:
   m_ObjectHideFlags: 0
