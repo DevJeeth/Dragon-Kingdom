@@ -105,11 +105,20 @@ namespace BoltStudios.Camera
 			}
 			else
 			{
-				//Y axis transform rotation
-				m_fLookAngle += Mathf.Clamp(m_fLookHorizontal, -1, 1) * m_fTurnSpeed;
-				transform.rotation = Quaternion.Slerp(transform.rotation,
-					Quaternion.Euler(transform.rotation.x, (transform.eulerAngles.y + m_fLookAngle), transform.rotation.z),
-					Time.deltaTime * m_fSmoothRotation);
+
+				//Stop the camera rotation if the user has stopped moving finger
+				if (m_fLookHorizontal == 0)
+				{
+					m_fLookAngle = Mathf.Lerp(m_fLookAngle,0,Time.deltaTime * m_fTurnSpeed/2);
+				}
+				else
+				{
+					//Y axis transform rotation based on finger movement
+					m_fLookAngle += Mathf.Clamp(m_fLookHorizontal, -1, 1) * m_fTurnSpeed;
+				}
+
+				Debug.Log("[FreeCameraRig] Look angle: "+m_fLookAngle+" The horizontal input value: " +m_fLookHorizontal);
+				transform.eulerAngles += new Vector3(0, m_fLookAngle, 0) * Time.deltaTime;	
 
 				//X axis pivot rotation
 				m_TiltAngle -= Mathf.Clamp(LookVertical, -1, 1) * m_fTurnSpeed;                                                 // on platforms with a mouse, we adjust the current angle based on Y mouse input and turn speed
