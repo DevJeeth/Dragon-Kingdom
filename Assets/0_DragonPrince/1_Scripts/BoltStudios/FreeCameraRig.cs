@@ -105,7 +105,7 @@ namespace BoltStudios.Camera
 			}
 			else
 			{
-
+				#region Y_AXIS_Rotation
 				//Stop the camera rotation if the user has stopped moving finger
 				if (m_fLookHorizontal == 0)
 				{
@@ -117,16 +117,21 @@ namespace BoltStudios.Camera
 					m_fLookAngle += Mathf.Clamp(m_fLookHorizontal, -1, 1) * m_fTurnSpeed;
 				}
 
-				Debug.Log("[FreeCameraRig] Look angle: "+m_fLookAngle+" The horizontal input value: " +m_fLookHorizontal);
-				transform.eulerAngles += new Vector3(0, m_fLookAngle, 0) * Time.deltaTime;	
+				transform.eulerAngles += new Vector3(0, m_fLookAngle, 0) * Time.deltaTime;
+				#endregion
 
+				#region  X_AXIS_Rotation
 				//X axis pivot rotation
 				m_TiltAngle -= Mathf.Clamp(LookVertical, -1, 1) * m_fTurnSpeed;                                                 // on platforms with a mouse, we adjust the current angle based on Y mouse input and turn speed
 				m_TiltAngle = Mathf.Clamp(m_TiltAngle, -m_TiltMin, m_TiltMax);                                                  // and make sure the new value is within the tilt range
 
-				m_PivotTargetRot = Quaternion.Euler(m_tCameraPivot.localRotation.x + m_TiltAngle, 0, 0);
-				m_tCameraPivot.localRotation = Quaternion.Slerp(m_tCameraPivot.localRotation, m_PivotTargetRot, Time.deltaTime * m_fSmoothRotation / 2);
+				Debug.Log("[FreeCameraRig] LookVertical value: "+m_fLookVertical+" m_TiltAngle Value: "+m_TiltAngle);
 
+				m_PivotTargetRot = Quaternion.Euler(m_tCameraPivot.localRotation.x + m_TiltAngle, 0, 0);
+				Debug.Log("[FreeCamerRig] Target Pivot Calculation: " + m_tCameraPivot.localRotation.x +" + "+"Tilt Angle: "+m_TiltAngle+" : "+ m_tCameraPivot.localRotation.x + m_TiltAngle);
+				Debug.Log("[FreeCamerRig] Target Pivot Rotation: "+ m_PivotTargetRot);
+				m_tCameraPivot.localRotation = Quaternion.Slerp(m_tCameraPivot.localRotation, m_PivotTargetRot, Time.deltaTime * m_fSmoothRotation / 2);
+				#endregion
 			}
 		}
 
@@ -149,12 +154,12 @@ namespace BoltStudios.Camera
 		{
 			if (coroutine != null)
 			{
-				Debug.Log("<color=red> free camera corountine stopped & ref removed</color>");
+				Debug.Log("<color=red> free camera corountine stopped & ref removed: SetCameraToFollowOnMoving</color>");
 				StopCoroutine(coroutine);
 				coroutine = null;
 			}
 			BoltStudios.Utils.Utilities.s_IsCameraTouchActive = false;
-			Debug.Log("<color=purple> Reset camera to moving</color>");
+			Debug.Log("<color=green> Reset camera to follow</color>");
 		}
 
 
@@ -164,7 +169,7 @@ namespace BoltStudios.Camera
 		{
 			if (coroutine != null)
 			{
-				Debug.Log("<color=red> free camera corountine stopped & ref removed</color>");
+				Debug.Log("<color=red> free camera corountine stopped & ref removed: Timer Lapsed</color>");
 				StopCoroutine(coroutine);
 				coroutine = null;
 			}
