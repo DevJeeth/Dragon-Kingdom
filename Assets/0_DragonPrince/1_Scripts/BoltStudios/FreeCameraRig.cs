@@ -25,7 +25,7 @@ namespace BoltStudios.Camera
 		private Quaternion m_TransformTargetRot;
 		public float m_TiltMax = 45f;                               // The maximum value of the x axis rotation of the pivot.
 		public float m_TiltMin = 25f;                               // The minimum value of the x axis rotation of the pivot.
-
+		public float m_fTiltEulerValue = 0;
 
 		private Transform m_tRefRig;
 
@@ -125,12 +125,16 @@ namespace BoltStudios.Camera
 				m_TiltAngle -= Mathf.Clamp(LookVertical, -1, 1) * m_fTurnSpeed;                                                 // on platforms with a mouse, we adjust the current angle based on Y mouse input and turn speed
 				m_TiltAngle = Mathf.Clamp(m_TiltAngle, -m_TiltMin, m_TiltMax);                                                  // and make sure the new value is within the tilt range
 
-				Debug.Log("[FreeCameraRig] LookVertical value: "+m_fLookVertical+" m_TiltAngle Value: "+m_TiltAngle);
+				//Debug.Log("[FreeCameraRig] LookVertical value: "+m_fLookVertical+" m_TiltAngle Value: "+m_TiltAngle);
 
-				m_PivotTargetRot = Quaternion.Euler(m_tCameraPivot.localRotation.x + m_TiltAngle, 0, 0);
-				Debug.Log("[FreeCamerRig] Target Pivot Calculation: " + m_tCameraPivot.localRotation.x +" + "+"Tilt Angle: "+m_TiltAngle+" : "+ m_tCameraPivot.localRotation.x + m_TiltAngle);
-				Debug.Log("[FreeCamerRig] Target Pivot Rotation: "+ m_PivotTargetRot);
-				m_tCameraPivot.localRotation = Quaternion.Slerp(m_tCameraPivot.localRotation, m_PivotTargetRot, Time.deltaTime * m_fSmoothRotation / 2);
+				m_PivotTargetRot = Quaternion.Euler(m_TiltAngle, 0, 0);
+				Debug.Log("[FreeCamerRig] Target Pivot Calculation: " + m_tCameraPivot.localRotation.x + " + " + "Tilt Angle: " + m_TiltAngle + " : " + m_tCameraPivot.localRotation.x + m_TiltAngle);
+				Debug.Log("[FreeCamerRig] Target Pivot Rotation: " + m_PivotTargetRot);
+
+				if (m_PivotTargetRot != Quaternion.Euler(0, 0, 0))
+				{
+					m_tCameraPivot.localRotation = Quaternion.Slerp(m_tCameraPivot.localRotation, m_PivotTargetRot, Time.deltaTime * m_fSmoothRotation / 2);
+				}
 				#endregion
 			}
 		}
