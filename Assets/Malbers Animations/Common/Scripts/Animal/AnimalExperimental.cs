@@ -53,6 +53,7 @@ namespace MalbersAnimations
         /// </summary>
         private void CharacterConnect()
         {
+			//TODO: LOOK INTO THIS 
             BoolEvent BAttack1, BAttack2, BAction, BJump, BShift, BFly, 
                 BDown, BUp, BDodge, BDeath, BStun, BDamaged, BSpeed1, BSpeed2, BSpeed3, BSpeedUp, BSpeedDown;
 

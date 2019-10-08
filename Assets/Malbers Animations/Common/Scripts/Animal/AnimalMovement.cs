@@ -322,6 +322,7 @@ namespace MalbersAnimations
         /// <param name="smoothness">Smoothness</param>
         public virtual void YAxisMovement(float smoothness, float time)
         {
+			Debug.Log("UP OR DOWN");
             if (Up) Down = false;                                             //Do not allow goin Up and Down at the same time
 
             // if (DirectionMovement) return; //HEREREERERERE

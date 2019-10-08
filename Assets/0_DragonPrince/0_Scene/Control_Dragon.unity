@@ -702,7 +702,7 @@ PrefabInstance:
     - target: {fileID: 6017712127262540395, guid: 13be9efa194fc214199a26559b01b06f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 821304042573550459, guid: 13be9efa194fc214199a26559b01b06f,
         type: 3}
@@ -1004,6 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TiltMax: 35
   m_TiltMin: 25
+  m_fTiltEulerValue: 0
   m_gTarget: {fileID: 2087892266}
   m_fFollowTurnSpeed: 4
   m_fMoveSpeed: 10
@@ -2665,5 +2666,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1272488614815020, guid: ad630b04c5aab54429cf978f5228085e,
         type: 2}
+    - target: {fileID: 6906094867651400207, guid: 283c491bc5ce8b14c8e35f70db2c9f3b,
+        type: 3}
+      propertyPath: EditorAir
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906094867651400207, guid: 283c491bc5ce8b14c8e35f70db2c9f3b,
+        type: 3}
+      propertyPath: canSwim
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906094867651400207, guid: 283c491bc5ce8b14c8e35f70db2c9f3b,
+        type: 3}
+      propertyPath: EditorWater
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906094867651400207, guid: 283c491bc5ce8b14c8e35f70db2c9f3b,
+        type: 3}
+      propertyPath: AirControl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906094867651400207, guid: 283c491bc5ce8b14c8e35f70db2c9f3b,
+        type: 3}
+      propertyPath: airSmoothness
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283c491bc5ce8b14c8e35f70db2c9f3b, type: 3}
