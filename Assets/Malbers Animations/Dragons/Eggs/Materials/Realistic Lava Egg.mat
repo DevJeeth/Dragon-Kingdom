@@ -116,7 +116,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EdgeLength: 15
-    - _EmmisionPower: 2.01
+    - _EmmisionPower: 2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -135,7 +135,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorBotton: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorUP: {r: 1, g: 0, b: 0, a: 0}
+    - _ColorUP: {r: 0.5009732, g: 0.58515686, b: 0.8308824, a: 0}
     - _Egg_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 1, g: 0.416, b: 0, a: 1}
     - _EmissionColor: {r: 1, g: 0, b: 0, a: 1}

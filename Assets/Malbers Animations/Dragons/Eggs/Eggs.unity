@@ -220,8 +220,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 182477951}
-  - component: {fileID: 182477950}
-  - component: {fileID: 182477949}
   m_Layer: 0
   m_Name: FreeLookCameraRig
   m_TagString: MainCamera
@@ -229,65 +227,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &182477949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114351821417399828, guid: 736f57217b513be468cd323120caf8c0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182477948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a61398c049edc43bc6ba3524c962e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerID: Player0
-  m_Target: {fileID: 811130310}
-  updateType: 0
-  m_MoveSpeed: 10
-  m_TurnSpeed: 10
-  m_TurnSmoothing: 10
-  m_TiltMax: 75
-  m_TiltMin: 45
-  Vertical:
-    active: 1
-    name: NewAxis
-    raw: 0
-    input: Mouse Y
-    OnAxisValueChanged:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: MalbersAnimations.Events.FloatEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  Horizontal:
-    active: 1
-    name: NewAxis
-    raw: 0
-    input: Mouse X
-    OnAxisValueChanged:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: MalbersAnimations.Events.FloatEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  m_LockCursor: 0
-  manager: {fileID: 0}
-  startState: {fileID: 0}
---- !u!54 &182477950
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 54057547423478212, guid: 736f57217b513be468cd323120caf8c0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182477948}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &182477951
 Transform:
   m_ObjectHideFlags: 0
@@ -834,11 +773,6 @@ Transform:
   m_Father: {fileID: 657824454}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &811130310 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4447042469127470, guid: 5cc48bc63303fe84a9854b095fade547,
-    type: 2}
-  m_PrefabInternal: {fileID: 438233432}
 --- !u!1001 &870105285
 Prefab:
   m_ObjectHideFlags: 0
@@ -1404,8 +1338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0b5b9d4af0f31439aabd6b5de7b49e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: You can use Subtance Material on the Material Changer Script if you are using
-    Unity lower than 2018
 --- !u!114 &1650122109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,29 +1350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7b187428519474db57076680c22084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialList:
-  - Name: Realistic Egg
-    mesh: {fileID: 1962422037}
-    materials:
-    - {fileID: 2100000, guid: 2faf5712003712d438e147be8be2163b, type: 2}
-    - {fileID: 2100000, guid: a36113780b71b2c4a8f54e1e6e4f94ad, type: 2}
-    - {fileID: 2100000, guid: f809df5514af3db48ab46f0201dc4535, type: 2}
-    - {fileID: 2100000, guid: e81331417d1e62641ad8ccc9870be60a, type: 2}
-    - {fileID: 2100000, guid: 56cb2830421e73149906466b4bf7361d, type: 2}
-    - {fileID: 2100000, guid: dcbc83044204ad14cb3085d3f40b8f2f, type: 2}
-    Linked: 0
-    Master: 0
-    current: 2
-    HasLODs: 0
-    LODs: []
-    indexM: 0
-    OnMaterialChanged:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: MalbersAnimations.Events.IntEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  showMeshesList: 1
-  random: 1
 --- !u!114 &1650122110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,63 +1362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02f15f14c0fc0447ac30e755d69e657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preHatchOffset: {x: 0, y: -0.35, z: 0}
-  Dragon: {fileID: 0}
-  removeShells: 10
-  input:
-    active: 1
-    name: Input
-    type: 1
-    input: CrackEgg
-    key: 48
-    GetPressed: 1
-    InputValue: 0
-    OnInputDown:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnInputUp:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnLongPress:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDoubleTap:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnInputChanged:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: MalbersAnimations.Events.BoolEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    ShowEvents: 0
-    DoubleTapTime: 0.3
-    LongPressTime: 0.5
-    OnInputPressed:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnPressedNormalized:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: MalbersAnimations.Events.FloatEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  seconds: 6
-  hatchtype: 2
-  OnEggCrack:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  ShowEvents: 1
 --- !u!136 &1650122111
 CapsuleCollider:
   m_ObjectHideFlags: 0

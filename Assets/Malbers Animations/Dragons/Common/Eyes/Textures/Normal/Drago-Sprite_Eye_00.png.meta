@@ -1,23 +1,36 @@
 fileFormatVersion: 2
 guid: aac5db01d46e33143b9c85071c177644
-timeCreated: 1465008681
-licenseType: Store
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Drago-Sprite_Eye_00_0
-    21300002: Drago-Sprite_Eye_00_1
-    21300004: Drago-Sprite_Eye_00_2
-    21300006: Drago-Sprite_Eye_00_3
-    21300008: Drago-Sprite_Eye_00_4
-    21300010: Drago-Sprite_Eye_00_5
-  serializedVersion: 2
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Drago-Sprite_Eye_00_0
+  - first:
+      213: 21300002
+    second: Drago-Sprite_Eye_00_1
+  - first:
+      213: 21300004
+    second: Drago-Sprite_Eye_00_2
+  - first:
+      213: 21300006
+    second: Drago-Sprite_Eye_00_3
+  - first:
+      213: 21300008
+    second: Drago-Sprite_Eye_00_4
+  - first:
+      213: 21300010
+    second: Drago-Sprite_Eye_00_5
+  externalObjects: {}
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -26,37 +39,60 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
+    serializedVersion: 2
     filterMode: -1
     aniso: 16
-    mipBias: -1
-    wrapMode: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: Drago-Sprite_Eye_00_0
+    - serializedVersion: 2
+      name: Drago-Sprite_Eye_00_0
       rect:
         serializedVersion: 2
         x: 0
@@ -66,35 +102,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 120, y: -116}
-        - {x: 116, y: -116}
-        - {x: 111, y: -124}
-        - {x: 111, y: -128}
-        - {x: 122, y: -128}
-        - {x: 122, y: -117}
-      - - {x: 121, y: -106}
-        - {x: 121, y: -120}
-        - {x: 122, y: -123}
-        - {x: 127, y: -123}
-        - {x: 128, y: -122}
-        - {x: 128, y: -99}
-        - {x: 127, y: -99}
-        - {x: 125, y: -100}
-      - - {x: -49, y: 76}
-        - {x: -73, y: 69}
-        - {x: -73, y: -60}
-        - {x: -49, y: -75}
-        - {x: 36, y: -75}
-        - {x: 78, y: -59}
-        - {x: 78, y: 44}
-        - {x: 54, y: 76}
-      - - {x: 110, y: 128}
-        - {x: 110, y: 123}
-        - {x: 123, y: 114}
-        - {x: 128, y: 114}
-        - {x: 128, y: 128}
-    - name: Drago-Sprite_Eye_00_1
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drago-Sprite_Eye_00_1
       rect:
         serializedVersion: 2
         x: 256
@@ -104,44 +123,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -115, y: -121}
-        - {x: -119, y: -125}
-        - {x: -119, y: -128}
-        - {x: -106, y: -128}
-        - {x: -106, y: -126}
-        - {x: -109, y: -122}
-        - {x: -111, y: -121}
-      - - {x: -128, y: -120}
-        - {x: -123, y: -122}
-        - {x: -120, y: -122}
-        - {x: -120, y: -113}
-        - {x: -122, y: -112}
-        - {x: -125, y: -112}
-        - {x: -128, y: -114}
-      - - {x: 57, y: 45}
-        - {x: 50, y: 54}
-        - {x: -32, y: 54}
-        - {x: -69, y: 29}
-        - {x: -69, y: -36}
-        - {x: -34, y: -48}
-        - {x: 36, y: -48}
-        - {x: 66, y: -22}
-        - {x: 77, y: -1}
-        - {x: 77, y: 19}
-      - - {x: -128, y: 128}
-        - {x: -128, y: 114}
-        - {x: -126, y: 114}
-        - {x: -103, y: 125}
-        - {x: -103, y: 128}
-      - - {x: 122, y: 128}
-        - {x: 118, y: 126}
-        - {x: 118, y: 119}
-        - {x: 124, y: 119}
-        - {x: 127, y: 120}
-        - {x: 128, y: 123}
-        - {x: 128, y: 128}
-    - name: Drago-Sprite_Eye_00_2
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drago-Sprite_Eye_00_2
       rect:
         serializedVersion: 2
         x: 512
@@ -151,34 +144,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 123, y: -119}
-        - {x: 115, y: -125}
-        - {x: 115, y: -128}
-        - {x: 128, y: -128}
-        - {x: 128, y: -119}
-      - - {x: -43, y: 41}
-        - {x: -69, y: -5}
-        - {x: -69, y: -29}
-        - {x: -67, y: -31}
-        - {x: -61, y: -32}
-        - {x: 31, y: -32}
-        - {x: 77, y: 0}
-        - {x: 77, y: 35}
-        - {x: 73, y: 41}
-      - - {x: 118, y: 128}
-        - {x: 118, y: 126}
-        - {x: 119, y: 121}
-        - {x: 125, y: 118}
-        - {x: 128, y: 118}
-        - {x: 128, y: 128}
-      - - {x: -128, y: 124}
-        - {x: -128, y: 119}
-        - {x: -127, y: 119}
-        - {x: -123, y: 123}
-        - {x: -123, y: 125}
-        - {x: -126, y: 126}
-    - name: Drago-Sprite_Eye_00_3
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drago-Sprite_Eye_00_3
       rect:
         serializedVersion: 2
         x: 0
@@ -188,26 +165,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 119, y: -109}
-        - {x: 119, y: -126}
-        - {x: 122, y: -127}
-        - {x: 128, y: -127}
-        - {x: 128, y: -109}
-      - - {x: -12, y: 31}
-        - {x: -33, y: 18}
-        - {x: -67, y: -22}
-        - {x: -67, y: -31}
-        - {x: -18, y: -31}
-        - {x: 77, y: 5}
-        - {x: 77, y: 22}
-        - {x: 48, y: 31}
-      - - {x: 122, y: 123}
-        - {x: 124, y: 120}
-        - {x: 128, y: 121}
-        - {x: 128, y: 126}
-        - {x: 124, y: 125}
-    - name: Drago-Sprite_Eye_00_4
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drago-Sprite_Eye_00_4
       rect:
         serializedVersion: 2
         x: 256
@@ -217,22 +186,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -128, y: -119}
-        - {x: -128, y: -128}
-        - {x: -120, y: -128}
-        - {x: -120, y: -124}
-        - {x: -125, y: -119}
-      - - {x: 32, y: 23}
-        - {x: -70, y: -15}
-        - {x: -71, y: -18}
-        - {x: -71, y: -29}
-        - {x: -70, y: -32}
-        - {x: -39, y: -32}
-        - {x: 77, y: -1}
-        - {x: 77, y: 22}
-        - {x: 75, y: 23}
-    - name: Drago-Sprite_Eye_00_5
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drago-Sprite_Eye_00_5
       rect:
         serializedVersion: 2
         x: 512
@@ -242,29 +207,29 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 123, y: -124}
-        - {x: 122, y: -128}
-        - {x: 128, y: -128}
-        - {x: 128, y: -119}
-        - {x: 127, y: -119}
-      - - {x: 32, y: 23}
-        - {x: -70, y: -15}
-        - {x: -71, y: -18}
-        - {x: -71, y: -29}
-        - {x: -70, y: -32}
-        - {x: -39, y: -32}
-        - {x: 77, y: -1}
-        - {x: 77, y: 22}
-        - {x: 75, y: 23}
-      - - {x: 116, y: 116}
-        - {x: 121, y: 109}
-        - {x: 128, y: 109}
-        - {x: 128, y: 128}
-        - {x: 120, y: 128}
-        - {x: 116, y: 124}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

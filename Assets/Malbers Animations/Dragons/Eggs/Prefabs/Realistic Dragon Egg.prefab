@@ -158,7 +158,6 @@ GameObject:
   - component: {fileID: 136005216897965872}
   - component: {fileID: 114442266284664212}
   - component: {fileID: 114216054903656494}
-  - component: {fileID: 114386982389304952}
   m_Layer: 0
   m_Name: Realistic Dragon Egg
   m_TagString: Untagged
@@ -471,7 +470,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1345337343759970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -38.116997, y: 22.960007, z: 53.271816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4679472210577632}
@@ -624,42 +623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7b187428519474db57076680c22084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialList:
-  - Name: Realistic Egg
-    mesh: {fileID: 137453123217351898}
-    materials:
-    - {fileID: 2100000, guid: 2faf5712003712d438e147be8be2163b, type: 2}
-    - {fileID: 2100000, guid: a36113780b71b2c4a8f54e1e6e4f94ad, type: 2}
-    - {fileID: 2100000, guid: f809df5514af3db48ab46f0201dc4535, type: 2}
-    - {fileID: 2100000, guid: e81331417d1e62641ad8ccc9870be60a, type: 2}
-    - {fileID: 2100000, guid: 56cb2830421e73149906466b4bf7361d, type: 2}
-    - {fileID: 2100000, guid: dcbc83044204ad14cb3085d3f40b8f2f, type: 2}
-    Linked: 0
-    Master: 0
-    current: 1
-    HasLODs: 0
-    LODs: []
-    indexM: 0
-    OnMaterialChanged:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: MalbersAnimations.Events.IntEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  showMeshesList: 1
-  random: 1
---- !u!114 &114386982389304952
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1345337343759970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e0b5b9d4af0f31439aabd6b5de7b49e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: You can use Subtance Material on the Material Changer Script if you are using
-    Unity lower than 2018
 --- !u!114 &114442266284664212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -671,63 +634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02f15f14c0fc0447ac30e755d69e657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preHatchOffset: {x: 0, y: -0.35, z: 0}
-  Dragon: {fileID: 0}
-  removeShells: 10
-  input:
-    active: 1
-    name: Input
-    type: 1
-    input: CrackEgg
-    key: 48
-    GetPressed: 1
-    InputValue: 0
-    OnInputDown:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnInputUp:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnLongPress:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDoubleTap:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnInputChanged:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: MalbersAnimations.Events.BoolEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    ShowEvents: 0
-    DoubleTapTime: 0.3
-    LongPressTime: 0.5
-    OnInputPressed:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnPressedNormalized:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: MalbersAnimations.Events.FloatEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  seconds: 2
-  hatchtype: 2
-  OnEggCrack:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  ShowEvents: 1
 --- !u!136 &136005216897965872
 CapsuleCollider:
   m_ObjectHideFlags: 1

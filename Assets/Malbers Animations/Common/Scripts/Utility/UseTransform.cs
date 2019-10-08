@@ -2,13 +2,17 @@
 
 namespace MalbersAnimations
 {
-
     public class UseTransform : MonoBehaviour
     {
+        public enum UpdateMode                                          // The available methods of updating are:
+        {
+            Update = 1,
+            FixedUpdate = 2,                                            // Update in FixedUpdate (for tracking rigidbodies).
+            LateUpdate = 4,                                             // Update in LateUpdate. (for tracking objects that are moved in Update)
+        }
 
-        public enum UpdateMode { Update, LateUpdate, FixedUpdate }
-
-        public Transform Reference;                       
+        public Transform Reference;
+        public bool rotation = true;
         public UpdateMode updateMode = UpdateMode.LateUpdate;
 
 
@@ -32,7 +36,7 @@ namespace MalbersAnimations
         {
             if (!Reference) return;
             transform.position = Reference.position;
-            transform.rotation = Reference.rotation;
+           if(rotation) transform.rotation = Reference.rotation;
         }
     }
 }

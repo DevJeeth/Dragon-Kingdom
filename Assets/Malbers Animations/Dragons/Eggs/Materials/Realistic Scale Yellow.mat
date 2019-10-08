@@ -134,9 +134,9 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorBotton: {r: 1, g: 0.9724139, b: 0, a: 1}
-    - _ColorUP: {r: 1, g: 0.93103445, b: 0, a: 1}
+    - _ColorBotton: {r: 1, g: 0.45679283, b: 0, a: 1}
+    - _ColorUP: {r: 1, g: 0.5587921, b: 0, a: 1}
     - _Egg_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission: {r: 1, g: 0.35172424, b: 0, a: 1}
+    - _Emission: {r: 1, g: 0.10080898, b: 0, a: 1}
     - _EmissionColor: {r: 1, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
