@@ -10,9 +10,13 @@ public class UIManager : MonoBehaviour
 	private RectTransform m_rectGameTitle;
 	[SerializeField]
 	private RectTransform[] m_arrMenuButtons;
+	
+
 
 	private void Awake()
 	{
+		BoltStudios.Utils.Utilities.MenuState = BoltStudios.Utils.eMenuState.None;
+
 		DOTween.Init(true, true, LogBehaviour.Default);
 
 		RectTransform rectChild;
@@ -31,14 +35,11 @@ public class UIManager : MonoBehaviour
 	// Start is called before the first frame update
 	private void Start()
     {
-		GameTitleTweenStart();
 	}
 
-
-
-	private void GameTitleTweenStart()
+	public void GameTitleTweenStart()
 	{
-		m_rectGameTitle.DOAnchorPos(new Vector2(13, -95), 1).OnComplete(GameTitleTweenComplete);
+		m_rectGameTitle.DOAnchorPos(new Vector2(13, -95), 1).OnComplete(GameTitleTweenComplete).SetEase(Ease.OutFlash);
 	}
 
 	private void GameTitleTweenComplete()
@@ -53,7 +54,7 @@ public class UIManager : MonoBehaviour
 		m_iCount = 0; 
 		for (int i = 0; i<m_arrMenuButtons.Length; i++)
 		{
-			m_arrMenuButtons[i].DOAnchorPos(new Vector2(73, m_arrMenuButtons[i].anchoredPosition.y), 1).SetDelay(i*0.25f).OnComplete(ButtonTweenComplete);
+			m_arrMenuButtons[i].DOAnchorPos(new Vector2(73, m_arrMenuButtons[i].anchoredPosition.y), 1).SetDelay(i*0.25f).OnComplete(ButtonTweenComplete).SetEase(Ease.OutFlash);
 		}
 	}
 
@@ -65,6 +66,7 @@ public class UIManager : MonoBehaviour
 		if(m_iCount >= m_arrMenuButtons.Length)
 		{
 			Debug.Log("[UIManager] Button Tween Complete");
+			BoltStudios.Utils.Utilities.MenuState = BoltStudios.Utils.eMenuState.Menu;
 		}
 	}
 

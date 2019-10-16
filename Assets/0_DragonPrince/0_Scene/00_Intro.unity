@@ -558,6 +558,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694229478}
   m_CullTransparentMesh: 0
+--- !u!1 &759757109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 759757111}
+  - component: {fileID: 759757110}
+  m_Layer: 0
+  m_Name: UIEventListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &759757110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759757109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58095e0c5f8f590488c5757e3f8023f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 39450882}
+        m_MethodName: GameTitleTweenStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_Event: {fileID: 11400000, guid: de625fc0b841e1f418106359dc844eda, type: 2}
+--- !u!4 &759757111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759757109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &829919434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413876, guid: d62be77ab4b73b54f8cd6e96a767f023,
@@ -1259,6 +1317,7 @@ GameObject:
   - component: {fileID: 2112942394}
   - component: {fileID: 2112942393}
   - component: {fileID: 2112942395}
+  - component: {fileID: 2112942396}
   m_Layer: 0
   m_Name: TimeLine
   m_TagString: Untagged
@@ -1285,6 +1344,8 @@ PlayableDirector:
     value: {fileID: 1127421416}
   - key: {fileID: -1033430858156014895, guid: 242850c72234136408cd4a7edc11ee21, type: 2}
     value: {fileID: 1127421416}
+  - key: {fileID: -4326422497025789888, guid: 242850c72234136408cd4a7edc11ee21, type: 2}
+    value: {fileID: 2112942392}
   m_ExposedReferences:
     m_References:
     - ac249800fce80d84eae6666ea3ccc136: {fileID: 1127421412}
@@ -1314,7 +1375,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6b1c93fe6fa094cb67931652718620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeline: {fileID: 11400000, guid: 242850c72234136408cd4a7edc11ee21, type: 2}
+  m_Events: {fileID: 11400000, guid: de625fc0b841e1f418106359dc844eda, type: 2}
+--- !u!114 &2112942396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112942392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: d4077cffdcfb1624e9aff1cd7e4e0122, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2112942395}
+          m_MethodName: ReceivePauseSignal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2138571420
 GameObject:
   m_ObjectHideFlags: 0
