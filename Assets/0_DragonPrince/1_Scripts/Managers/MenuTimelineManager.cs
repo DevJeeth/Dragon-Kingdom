@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using WeplayVR.Base;
 
 public class MenuTimelineManager : MonoBehaviour
 {
@@ -13,11 +14,10 @@ public class MenuTimelineManager : MonoBehaviour
 	Dictionary<string, double> m_dicEnvmarkerInfo = new Dictionary<string, double>();
 
 	private string m_strCurrentClipName = "";
-	[SerializeField]
-	private BoltStudios.Event.Events m_Events;
 
 	private void OnEnable()
 	{
+		
 	}
 
 	private void OnDisable()
@@ -104,7 +104,7 @@ public class MenuTimelineManager : MonoBehaviour
 
 		if(BoltStudios.Utils.Utilities.MenuState == BoltStudios.Utils.eMenuState.None)
 		{
-			m_Events.TriggerEvent();
+			EventManager.Instance.TriggerEvent<DragonMenuEvent>(new DragonMenuEvent());
 		}
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using WeplayVR.Base;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,13 +33,31 @@ public class UIManager : MonoBehaviour
 		}
 	}
 
+	public void OnEnable()
+	{
+		if (EventManager.Instance != null)
+			EventManager.Instance.RegisterEvent<DragonMenuEvent>(GameTitleTweenStart);
+	}
+
+	public void OnDisable()
+	{
+		if(EventManager.Instance != null)
+			EventManager.Instance.DeRegisterEvent<DragonMenuEvent>(GameTitleTweenStart);
+	}
+
 	// Start is called before the first frame update
 	private void Start()
     {
 	}
 
-	public void GameTitleTweenStart()
+	public void GameTitleTweenStart(IEventBase a_Event)
 	{
+		DragonMenuEvent data = a_Event as DragonMenuEvent;
+		if (data == null)
+			return;
+
+
+		Debug.Log("[UIManager] GameTitleTweenStart");
 		m_rectGameTitle.DOAnchorPos(new Vector2(13, -95), 1).OnComplete(GameTitleTweenComplete).SetEase(Ease.OutFlash);
 	}
 
